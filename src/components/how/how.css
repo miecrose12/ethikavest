@@ -1,0 +1,243 @@
+ @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .how-wrapper {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          padding: 100px 20px;
+          max-width: 1440px;
+          margin: 0 auto;
+        }
+
+        /* Header */
+        .how-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 60px;
+          flex-wrap: wrap;
+          gap: 30px;
+        }
+
+        .how-title {
+          font-weight: 600;
+          font-size: 56px;
+          line-height: 120%;
+          letter-spacing: -1px;
+          color: #000;
+          text-align: left;
+        }
+
+        .investment-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-weight: 500;
+          font-size: 22px;
+          color: #000;
+          margin-top: 110px;
+        }
+
+        .investment-header svg { color: #2AA866; }
+
+        /* Shared */
+        .card-label {
+          font-weight: 500;
+          font-size: 18px;
+          margin: 0 0 20px 40px;
+          color: inherit;
+        }
+
+        /* FIRST CARD – Investment */
+        .investment-card {
+          width: 100%;
+          max-width: 1265px;
+          height: 203px;
+          background: #EAF6F0;
+          border-radius: 20px;
+          padding: 40px;
+          margin: 0 auto 32px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .investment-row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          gap: 180px;
+        }
+
+        .input-group {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .input-text {
+          font-weight: 700;
+          font-size: 20px;
+          color: #53575E;
+          text-decoration: underline;
+          text-decoration-color: #53575E;
+        }
+
+        .input-group svg {
+          color: #2AA866;
+          flex-shrink: 0;
+        }
+
+        /* Amount Group – Naira beside amount, dropdown right */
+        .amount-group {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .currency-text {
+          font-weight: 500;
+          font-size: 18px;
+          color: #53575E;
+        }
+
+        .amount-value {
+          font-weight: 700;
+          font-size: 36px;
+          letter-spacing: -1px;
+          color: #2AA866;
+          text-decoration: underline;
+          text-decoration-color: #2AA866;
+        }
+
+        .amount-group svg {
+          color: #2AA866;
+          flex-shrink: 0;
+        }
+
+        /* SECOND CARD – Returns */
+        .returns-card {
+          width: 100%;
+          max-width: 1265px;
+          height: 295px;
+          background: #0F3B24;
+          border-radius: 20px;
+          padding: 40px;
+          margin: 0 auto;
+          color: #EAF6F0;
+        }
+
+        .returns-content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 163px;
+          height: 215px;
+          position: relative;
+        }
+
+        .return-block {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 16px;
+          width: 240px;
+        }
+
+        .top-label {
+          font-weight: 500;
+          font-size: 18px;
+          color: #EAF6F0;
+          margin-bottom: 70px;
+        }
+
+        /* Naira Symbol Top-Left */
+        .big-amount {
+          position: relative;
+          display: inline-block;
+          text-align: left;
+          min-height: 76px;
+        }
+
+        .big-amount .naira-symbol {
+          position: absolute;
+          top: -4px;
+          left: 0;
+          font-weight: 600;
+          font-size: 28px;
+          color: #ABEA65;
+        }
+
+        .big-amount .number {
+          font-weight: 700;
+          font-size: 42px;
+          letter-spacing: -2px;
+          line-height: 1;
+          color: #ABEA65;
+          padding-left: 38px;
+          display: block;
+        }
+
+        /* Rate – No Naira */
+        .rate-amount .number {
+          font-size: 42px;
+          padding-left: 0;
+          text-align: center;
+        }
+
+        /* Profit number slightly smaller */
+        .return-block:nth-child(2) .big-amount .number {
+          font-size: 48px;
+        }
+
+        /* DIVIDERS – Using pseudo-elements for clean alignment */
+        .returns-content::before,
+        .returns-content::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 170px;
+          background: #ABEA65;
+          opacity: 0.5;
+        }
+
+        .returns-content::before {
+          left: calc(50% - 163px - 81px);
+        }
+
+        .returns-content::after {
+          left: calc(50% + 163px + 81px);
+        }
+
+        /* Responsive */
+    
+
+        @media (max-width: 1080px) {
+          .how-title { font-size: 44px; }
+          .investment-row,
+          .returns-content {
+            flex-direction: column;
+            gap: 50px;
+            height: auto;
+          }
+          .returns-content::before,
+          .returns-content::after {
+            width: 280px;
+            height: 1px;
+            left: 50% !important;
+            transform: translateX(-50%);
+            top: auto;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .investment-card,
+          .returns-card { padding: 30px; height: auto; }
+          .big-amount .number { font-size: 48px; padding-left: 32px; }
+          .big-amount .naira-symbol { font-size: 24px; }
+          .rate-amount .number { font-size: 48px; }
+        }

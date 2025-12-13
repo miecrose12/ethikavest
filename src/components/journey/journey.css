@@ -1,0 +1,176 @@
+/* HeroSection.css */
+
+.hero-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 40px 140px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin-bottom: -190px;
+}
+
+/* Typography */
+.main-title {
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 1.2;
+  color: #000;
+  margin: 0 0 16px 0;
+}
+
+.subtitle {
+  font-family: 'TheShuffleRegular-yYarm', sans-serif;  /* ← Your custom font! */
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1;
+  color: #00C853;
+  margin: 0 0 40px 0;
+}
+
+.highlight-green {
+  color: #00C853;
+}
+
+.tagline {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.46;
+  letter-spacing: -0.05px;
+  color: #000000B2;
+  max-width: 800px;
+  margin: 0 auto 80px auto;
+}
+
+/* 4 CARDS – ALL VISIBLE ON DESKTOP */
+.cards-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1920px;
+  padding: 80px 20px;
+  flex-wrap: nowrap;
+}
+
+.feature-card {
+  flex: 0 0 400px;
+  height: 420px;
+  background: #DFF2E8;
+  border-radius: 30px;
+  padding: 40px;
+  position: relative;
+  transition: transform 0.35s ease;
+}
+
+/* Individual card rotations with precise alignment */
+.feature-card:nth-child(1) {
+  transform: rotate(-2deg);
+  margin-top: 15px;
+}
+
+.feature-card:nth-child(2) {
+  transform: rotate(-2deg);
+  margin-top: -1px;
+}
+
+.feature-card:nth-child(3) {
+  transform: rotate(-2deg);
+  margin-top: -16px;
+}
+
+.feature-card:nth-child(4) {
+  transform: rotate(-2deg);
+  margin-top: -32px;
+}
+
+.card-content {
+  text-align: left;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.card-description {
+  font-size: 18px;
+  line-height: 1.38;
+  color: #333;
+}
+
+.card-icon {
+  position: absolute;
+  bottom: 40px;
+  left: 48px;
+}
+
+.icon-placeholder {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 4px;
+  background-size: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1600px) {
+  .cards-carousel { gap: 32px; }
+  .feature-card { flex: 0 0 360px; height: 400px; }
+}
+
+@media (max-width: 1366px) {
+  .cards-carousel { gap: 24px; }
+  .feature-card { flex: 0 0 340px; }
+  .main-title { font-size: 48px; }
+  .subtitle { font-size: 56px; }
+}
+
+@media (max-width: 1180px) {
+  .cards-carousel {
+    gap: 20px;
+    padding: 40px 10px;
+  }
+  .feature-card { flex: 0 0 320px; height: 380px; padding: 32px; }
+}
+
+/* Tablet → Stack vertically (best mobile UX) */
+@media (max-width: 1024px) {
+  .hero-container { padding: 80px 24px 120px; }
+
+  .cards-carousel {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 20px 0;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    min-height: 300px;
+    transform: rotate(0deg);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .main-title { font-size: 42px; }
+  .subtitle { font-size: 48px; }
+  .tagline { font-size: 20px; margin-bottom: 60px; }
+}
+
+@media (max-width: 480px) {
+  .main-title { font-size: 36px; }
+  .subtitle { font-size: 42px; }
+  .tagline { font-size: 18px; }
+}

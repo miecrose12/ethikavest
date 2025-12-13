@@ -1,0 +1,135 @@
+/* src/components/Back.css */
+
+.back-section {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 600px;                    /* fixed artboard height */
+  margin: 0 auto;
+  padding: 80px 40px;
+  overflow: visible;                /* crucial so card can stick out */
+  background: transparent;
+}
+
+/* ==================== IMAGE ==================== */
+.back-image {
+  position: absolute;
+  top: 52px;
+  left: 14px;
+  width: 397px;
+  height: 397px;
+  object-fit: cover;
+  border-radius: 21px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+/* ==================== WHITE CARD (extends outside) ==================== */
+.back-card {
+  position: absolute;
+  top: 305px;
+  left: 172px;
+  width: 299px;
+  height: 185px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px -3px #0000001A;   /* EXACT shadow you gave */
+  z-index: 2;
+}
+
+/* ==================== TEXT CONTAINER ==================== */
+.back-text-container {
+  position: absolute;
+  top: 80px;
+  right: 90px;
+  width: 566px;
+  text-align: left;
+
+}
+
+.back-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;                 /* SemiBold */
+  font-size: 56px;
+  line-height: 120%;                /* 67.2px */
+  letter-spacing: -1px;
+  color: #111111;
+  margin-bottom: 24px;
+}
+
+.back-paragraph {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;                 /* Medium */
+  font-size: 22px;
+  line-height: 146%;                /* ~35px */
+  letter-spacing: -0.05px;
+  color: #333333;
+  width: 600px;
+  margin-left: auto;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1280px) {
+  .back-text-container { width: 500px; }
+  .back-heading { font-size: 50px; }
+}
+
+@media (max-width: 1024px) {
+  .back-image {
+    width: 360px;
+    height: 360px;
+    left: 20px;
+  }
+  .back-card {
+    left: 150px;
+    width: 320px;
+  }
+  .back-text-container {
+    width: 460px;
+    top: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-section {
+    height: auto;
+    min-height: 800px;
+    padding: 40px 20px;
+  }
+
+  .back-image {
+    position: static;
+    width: 90vw;
+    max-width: 397px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .back-card {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85vw;
+    max-width: 340px;
+    top: 420px;
+  }
+
+  .back-text-container {
+    position: static;
+    width: 100%;
+    max-width: 639px;
+    margin: 560px auto 0;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .back-heading,
+  .back-paragraph {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .back-heading { font-size: 42px; }
+  .back-paragraph { font-size: 20px; }
+}

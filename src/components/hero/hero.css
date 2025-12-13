@@ -1,0 +1,120 @@
+/* hero.css */
+.hero-container {
+
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px; /* Reasonable padding; adjust as needed */
+  max-width: 800px; /* Assuming a reasonable width for the "long rectangle" */
+  margin: 0 auto;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 8px 12px;
+  background-color: #DFF2E8; /* Explicitly setting background for the header row as per user clarification */
+}
+
+.small-square {
+  width: 16px;
+  height: 16px;
+  background-color: #228652;
+  margin-right: 8px;
+}
+
+.small-text {
+  color: #134C2E;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+
+.big-title {
+  font-weight: 700;
+  font-size: 58px;
+  color: black;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.subtitle1 {
+  font-weight: 500;
+  font-size: 20px;
+  color: black;
+  margin: 0 0 32px 0;
+  text-align: center;
+  max-width: 600px;
+}
+
+.subtitle-line11,
+.subtitle-line22 {
+  margin: 0;
+}
+
+.subtitle-line1 {
+  /* No additional styles needed unless specified */
+}
+
+.subtitle-line2 {
+  /* No additional styles needed unless specified */
+}
+
+.buttons-row {
+  display: flex;
+  gap: 16px; /* Space between the two buttons */
+  margin-bottom: 40px;
+}
+
+.google-button2,
+.apple-button2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 266px;
+  height: 60px;
+  border-radius: 4px;
+  padding: 16px 24px;
+  opacity: 1;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.google-button2 {
+  background-color: #2AA866;
+}
+
+.apple-button2 {
+  background-color: #262157;
+}
+
+.button-icon2 {
+  width: 24px;
+  height: 24px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 200vh;     /* increase to 90vh or even 100vh if you want */
+  object-fit: cover;
+  display: block;
+}
+
+.frame{
+    margin-top: -200px;
+}
+
+
+.gradient-div {
+  width: 100%;
+  height: 200px; /* Arbitrary height for the gradient; adjust as needed */
+  background: linear-gradient(178.12deg, rgba(255, 255, 255, 0) -0.85%, #FFFFFF 58.54%);
+}
