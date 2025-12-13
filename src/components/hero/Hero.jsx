@@ -4,7 +4,7 @@ import './hero.css';
 import Apple from '../../assets/apple.svg';
 import Google from '../../assets/playstore.svg';
 import Heros from '../../assets/hrr.svg';
-import Frame from '../../assets/frame.svg';
+import Frame from '../../assets/Frame.svg';
 
 function Hero() {
   return (
