@@ -1,6 +1,6 @@
 // src/components/Back.jsx
 import React from "react";
-import "./Back.css";
+import "./back.css";
 import Frame from '../../assets/framer.svg';
 
 

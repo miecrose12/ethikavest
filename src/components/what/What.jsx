@@ -1,6 +1,6 @@
 // @ts-nocheck   <-- This kills all TypeScript errors forever
 import React from 'react';
-import './What.css';
+import './what.css';
 import what from '../../assets/what.svg';
 
 

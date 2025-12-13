@@ -1,6 +1,6 @@
 // src/components/Trusted.jsx
 import React from 'react';
-import './Trusted.css';
+import './trusted.css';
 
 // Replace this with your actual image path
 import trustedImage from '../../assets/trusted.svg'; // <-- update this path

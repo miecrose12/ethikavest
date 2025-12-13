@@ -1,6 +1,6 @@
 // Footer.jsx
 import React from 'react';
-import './Footer.css';
+import './footer.css';
 import playstore from '../../assets/playstore.svg';
 import apple from '../../assets/apple.svg';
 import facebook from '../../assets/facebook.svg';
