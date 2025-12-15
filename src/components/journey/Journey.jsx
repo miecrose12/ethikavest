@@ -1,7 +1,6 @@
-// src/components/HeroSection.jsx
 import React from 'react';
 import './journey.css';
-import Frames from '../../assets/Frames.svg'; 
+import Frames from '../../assets/Frames.svg';
 
 const HeroSection = () => {
   const steps = [
@@ -9,48 +8,54 @@ const HeroSection = () => {
       title: "Create Account",
       desc: "Create your free account in just seconds and start investing confidently today."
     },
-     {
-      title: "Create Account",
-      desc: "Create your free account in just seconds and start investing confidently today."
+    {
+      title: "Fund Wallet",
+      desc: "Add funds seamlessly with multiple payment options and start building your portfolio."
     },
-     {
-      title: "Create Account",
-      desc: "Create your free account in just seconds and start investing confidently today."
+    {
+      title: "Choose Investment",
+      desc: "Browse verified opportunities and select investments that match your goals."
     },
-     {
-      title: "Create Account",
-      desc: "Create your free account in just seconds and start investing confidently today."
+    {
+      title: "Track Growth",
+      desc: "Monitor your returns in real-time and watch your wealth grow effortlessly."
     }
   ];
 
+  // Duplicate cards for seamless infinite loop
+  const duplicatedSteps = [...steps, ...steps ];
+
   return (
-    <div className="hero-container">
-      <h1 className="main-title">Start your journey—</h1>
-      <h2 className="subtitle">
-        simple and smooth.
-      </h2>
+   <section id="journeya" className="hero-container">
+      <h1 className="main-title">
+        Start your journey—<br />
+        <span className="highlight-green">simple</span> and <span className="highlight-green">smooth.</span>
+      </h1>
+     
+      <h2 className="subtitle">How it works</h2>
+     
       <p className="tagline">
-        Starting is simple. Growing is natural.<br />
-        It doesn’t take a minute to start growing wealth with us.
+        Starting is simple. Growing is natural. It doesn't take a minute to<br />
+        start growing wealth with us.
       </p>
 
-      {/* All 4 cards visible at once on desktop */}
       <div className="cards-carousel">
-        {steps.map((step, index) => (
-          <div key={index} className="feature-card">
-            <div className="card-content">
-              <h3 className="card-title">{step.title}</h3>
-              <p className="card-description">{step.desc}</p>
+        <div className="cards-track">
+          {duplicatedSteps.map((step, index) => (
+            <div key={index} className="feature-card">
+              <div className="card-content">
+                <h3 className="card-title">{step.title}</h3>
+                <p className="card-description">{step.desc}</p>
+              </div>
+              <div className="card-icon">
+              <img src={Frames} className='icon-placeholder' alt="" />
+              </div>
             </div>
-
-            <div className="card-icon">
-              <img src={Frames} alt="" className='icon-placeholder' />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default HeroSection;
+export default HeroSection; 

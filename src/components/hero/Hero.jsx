@@ -8,7 +8,7 @@ import Frame from '../../assets/Frame.svg';
 
 function Hero() {
   return (
-    <div className="hero-container">
+    <div id="home" className="hero-container">
       <div className="header-row">
         <div className="small-square"></div>
         <p className="small-text">First Halal Investment Product in Nigeria</p>
@@ -30,7 +30,7 @@ function Hero() {
       </div>
       <div className="image-wrapper">
         <img src={Heros} alt="Hero Image" className="hero-image" />
-        <img src={Frame} alt="" className="frame" />
+        {/* <img src={Frame} alt="" className="frame" /> */}
       </div>
     </div>
   );

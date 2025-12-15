@@ -1,7 +1,25 @@
-/* navbar.css */
+/* === FIXED NAVBAR + SCROLL ANIMATION === */
 .navbar {
-  background-color: #ffffff; /* Assuming white background; adjust as needed */
-  padding: 10px 0; /* Vertical padding for the navbar */
+  background-color: #ffffff; /* Always white background */
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
+  box-shadow: 0 4px 12px rgba(63, 63, 63, 0.05); /* Light shadow by default */
+}
+
+.navbar-scrolled {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Stronger shadow on scroll */
+  padding: 8px 0; /* Optional: slightly compact on scroll */
+}
+
+/* Spacer to prevent content jump */
+.navbar-spacer {
+  height: 70px; /* Increased slightly to account for possible padding change */
 }
 
 .navbar-container {
@@ -10,7 +28,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Horizontal padding inside container */
+  padding: 0 20px;
+  position: relative;
 }
 
 .navbar-logo {
@@ -20,7 +39,7 @@
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 24px; /* Space between links; adjust as needed */
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
@@ -31,7 +50,7 @@
 
 .navbar-links a {
   text-decoration: none;
-  color: #000000; /* Default text color; adjust as needed */
+  color: #000000;
   font-size: 14px;
   font-weight: 500;
   position: relative;
@@ -48,27 +67,286 @@
 .navbar-links a:active::after {
   content: "";
   position: absolute;
-  bottom: -4px; /* distance from text */
-  left: 50%; /* move to the center */
-  transform: translateX(-50%); /* perfectly center it */
-  width: 60%; /* adjust how wide you want the underline */
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
   height: 2px;
   background-color: #207E4D;
 }
-
 
 .navbar-button {
   background-color: #26975C;
   border: 1px solid #228652;
   color: #ffffff;
-  font-size: 14px; /* Matching font size; adjust as needed */
+  font-size: 14px;
   font-weight: 600;
-  padding: 12px 20px; /* Padding for button; adjust as needed */
-  border-radius: 4px; /* Slight rounding; adjust or remove as needed */
+  padding: 12px 20px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .navbar-button:hover {
-  background-color: #207E4D; /* Optional hover effect; adjust as needed */
+  background-color: #207E4D;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.navbar-toggle:hover {
+  color: #207E4D;
+}
+
+.navbar-mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 790px) {
+  .navbar-links,
+  .navbar-button {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-mobile-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  }
+
+  .navbar-mobile-menu.active {
+    max-height: 400px;
+    opacity: 1;
+    padding: 20px;
+  }
+
+  .navbar-mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .navbar-mobile-links a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-mobile-links a:hover,
+  .navbar-mobile-links a:active {
+    color: #207E4D;
+    font-weight: 600;
+  }
+
+  .navbar-mobile-button {
+    width: 100%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-container {
+    padding: 0 15px;
+  }
+
+  .navbar-logo img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  .navbar-spacer {
+    height: 65px;
+  }
+}
+
+/* ==================== MODAL STYLES ==================== */
+/* (Your modal CSS remains exactly the same — no changes needed) */
+.navbar-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.navbar-modal-content {
+  background: #FFFFFF;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  padding: 48px 40px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  color: #999;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-modal-close:hover {
+  color: #333;
+}
+
+.navbar-modal-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+  color: #1A1A1A;
+  text-align: center;
+  margin: 0 0 36px 0;
+}
+
+.navbar-modal-name-label,
+.navbar-modal-email-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #1A1A1A;
+  margin-bottom: 10px;
+}
+
+.navbar-modal-name-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.navbar-modal-name-input,
+.navbar-modal-email-input {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: #F0FAF5;
+  border: none;
+  border-radius: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #1A1A1A;
+}
+
+.navbar-modal-name-input::placeholder,
+.navbar-modal-email-input::placeholder {
+  color: #888;
+  font-weight: 500;
+}
+
+.navbar-modal-name-input:focus,
+.navbar-modal-email-input:focus {
+  outline: none;
+  background-color: #E0F5EA;
+}
+
+.navbar-modal-email-label + .navbar-modal-email-input {
+  margin-bottom: 40px;
+  display: block;
+}
+
+.navbar-modal-join-btn {
+  width: 100%;
+  height: 60px;
+  background-color: #26975C;
+  color: #FFFFFF;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-modal-join-btn:hover {
+  background-color: #207E4D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(38, 151, 92, 0.3);
+}
+
+/* Modal Responsiveness */
+@media (max-width: 768px) {
+  .navbar-modal-content {
+    padding: 48px 32px;
+    max-width: 90vw;
+  }
+
+  .navbar-modal-title {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .navbar-modal-name-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-modal-content {
+    padding: 40px 24px;
+  }
+
+  .navbar-modal-title {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+
+  .navbar-modal-name-label,
+  .navbar-modal-email-label {
+    font-size: 22px;
+  }
+
+  .navbar-modal-name-input,
+  .navbar-modal-email-input {
+    padding: 14px 18px;
+    font-size: 17px;
+  }
+
+  .navbar-modal-join-btn {
+    height: 56px;
+    font-size: 17px;
+  }
 }

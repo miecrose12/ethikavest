@@ -1,8 +1,8 @@
 import React from 'react';
 import circlesPattern from '../../assets/fagbo.png';
-import language from '../../assets/language.svg';  // ✅ Import here
-import ai from '../../assets/ai.svg'; 
-import compliance from '../../assets/copliance.svg'; 
+import language from '../../assets/language.svg';
+import ai from '../../assets/ai.svg';
+import compliance from '../../assets/copliance.svg';
 
 const InvestmentSection = () => {
   return (
@@ -37,7 +37,7 @@ const InvestmentSection = () => {
           left: 0; 
           right: 0; 
           bottom: 0;
-          background-image: var(--circles-pattern); /* ✅ CSS variable */
+          background-image: var(--circles-pattern);
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -47,7 +47,6 @@ const InvestmentSection = () => {
         }
 
         .section-title3 {
-       
           font-weight: 600;
           font-size: 64px;
           line-height: 120%;
@@ -61,10 +60,11 @@ const InvestmentSection = () => {
         .section-title3 .highlight3 {
           color: #ABEA65;
         }
-          .highlight3{
-             font-family: 'TheShuffleRegular-yYarm', sans-serif;
-              font-weight: 400;
-          }
+
+        .highlight3 {
+          font-family: 'TheShuffleRegular-yYarm', sans-serif;
+          font-weight: 400;
+        }
 
         .cards-container3 {
           display: grid;
@@ -133,13 +133,88 @@ const InvestmentSection = () => {
           font-display: swap;
         }
 
+        /* Tablet & Medium Screens */
         @media (max-width: 1024px) {
+          .investment-section3 {
+            padding: 90px 32px;
+            border-top-left-radius: 80px;
+            border-top-right-radius: 80px;
+            min-height: auto;
+          }
+
+          .section-title3 {
+            font-size: 52px;
+            margin-bottom: 80px;
+          }
+
           .cards-container3 {
             grid-template-columns: 1fr;
+            max-width: 500px;
+            row-gap: 24px;
+          }
+
+          .card3 {
+            width: 100%;
+            height: auto;
+            min-height: 220px;
+            padding: 36px;
+            gap: 22px;
+          }
+
+          .card-title3 {
+            font-size: 28px;
+          }
+
+          .card-description3 {
+            font-size: 18px;
           }
         }
 
-        @media (max-width: 540px) {
+        /* Small Tablet */
+        @media (max-width: 768px) {
+          .investment-section3 {
+            padding: 70px 24px;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+          }
+
+          .section-title3 {
+            font-size: 44px;
+            margin-bottom: 60px;
+          }
+
+          .cards-container3 {
+            max-width: 450px;
+            row-gap: 20px;
+          }
+
+          .card3 {
+            min-height: 200px;
+            padding: 32px;
+            gap: 20px;
+          }
+
+          .card-header3 {
+            gap: 16px;
+          }
+
+          .card-icon3 {
+            width: 32px;
+            height: 32px;
+          }
+
+          .card-title3 {
+            font-size: 26px;
+          }
+
+          .card-description3 {
+            font-size: 17px;
+            line-height: 150%;
+          }
+        }
+
+        /* Mobile Landscape & Large Phones */
+        @media (max-width: 640px) {
           .investment-section3 {
             padding: 60px 20px;
             border-top-left-radius: 50px;
@@ -148,18 +223,30 @@ const InvestmentSection = () => {
 
           .section-title3 {
             font-size: 36px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
           }
 
           .cards-container3 {
-            grid-template-columns: 1fr;
-            row-gap: 20px;
+            max-width: 400px;
+            row-gap: 18px;
           }
 
           .card3 {
             width: 100%;
             height: auto;
-            padding: 30px;
+            min-height: 180px;
+            padding: 28px;
+            gap: 18px;
+            border-radius: 16px;
+          }
+
+          .card-header3 {
+            gap: 14px;
+          }
+
+          .card-icon3 {
+            width: 30px;
+            height: 30px;
           }
 
           .card-title3 {
@@ -168,6 +255,145 @@ const InvestmentSection = () => {
 
           .card-description3 {
             font-size: 16px;
+            line-height: 152%;
+          }
+        }
+
+        /* Standard Mobile Phones */
+        @media (max-width: 480px) {
+          .investment-section3 {
+            padding: 50px 16px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+          }
+
+          .section-title3 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            line-height: 125%;
+          }
+
+          .section-title3 br {
+            display: none;
+          }
+
+          .cards-container3 {
+            max-width: 100%;
+            row-gap: 16px;
+          }
+
+          .card3 {
+            min-height: 160px;
+            padding: 24px;
+            gap: 16px;
+            border-radius: 14px;
+          }
+
+          .card-header3 {
+            gap: 12px;
+          }
+
+          .card-icon3 {
+            width: 28px;
+            height: 28px;
+          }
+
+          .card-title3 {
+            font-size: 22px;
+            line-height: 130%;
+          }
+
+          .card-description3 {
+            font-size: 15px;
+            line-height: 155%;
+          }
+        }
+
+        /* Small Mobile Phones (iPhone SE, small Androids) */
+        @media (max-width: 400px) {
+          .investment-section3 {
+            padding: 45px 14px;
+            border-top-left-radius: 35px;
+            border-top-right-radius: 35px;
+          }
+
+          .section-title3 {
+            font-size: 28px;
+            margin-bottom: 35px;
+          }
+
+          .cards-container3 {
+            row-gap: 14px;
+          }
+
+          .card3 {
+            min-height: 150px;
+            padding: 22px;
+            gap: 14px;
+            border-radius: 12px;
+          }
+
+          .card-header3 {
+            gap: 10px;
+          }
+
+          .card-icon3 {
+            width: 26px;
+            height: 26px;
+          }
+
+          .card-title3 {
+            font-size: 20px;
+            line-height: 130%;
+          }
+
+          .card-description3 {
+            font-size: 14px;
+            line-height: 158%;
+          }
+        }
+
+        /* Extra Small Phones */
+        @media (max-width: 360px) {
+          .investment-section3 {
+            padding: 40px 12px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+          }
+
+          .section-title3 {
+            font-size: 26px;
+            margin-bottom: 30px;
+          }
+
+          .cards-container3 {
+            row-gap: 12px;
+          }
+
+          .card3 {
+            min-height: 140px;
+            padding: 20px;
+            gap: 12px;
+            border-radius: 12px;
+          }
+
+          .card-header3 {
+            gap: 10px;
+          }
+
+          .card-icon3 {
+            width: 24px;
+            height: 24px;
+          }
+
+          .card-title3 {
+            font-size: 18px;
+            line-height: 130%;
+          }
+
+          .card-description3 {
+            font-size: 13px;
+            line-height: 160%;
           }
         }
       `}</style>
@@ -175,7 +401,7 @@ const InvestmentSection = () => {
       {/* Inject imported image into CSS */}
       <section
         className="investment-section3"
-        style={{ '--circles-pattern': `url(${circlesPattern})` }} // ✅ HERE
+        style={{ '--circles-pattern': `url(${circlesPattern})` }}
       >
         <h1 className="section-title3">
           Why your <span className="highlight3">savings</span> and <br />

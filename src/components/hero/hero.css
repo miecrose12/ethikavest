@@ -1,12 +1,10 @@
-/* hero.css */
 .hero-container {
-
   border-radius: 7px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px; /* Reasonable padding; adjust as needed */
-  max-width: 800px; /* Assuming a reasonable width for the "long rectangle" */
+  padding: 40px 20px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -16,7 +14,7 @@
   margin-bottom: 20px;
   border-radius: 12px;
   padding: 8px 12px;
-  background-color: #DFF2E8; /* Explicitly setting background for the header row as per user clarification */
+  background-color: #DFF2E8;
 }
 
 .small-square {
@@ -55,18 +53,13 @@
   margin: 0;
 }
 
-.subtitle-line1 {
-  /* No additional styles needed unless specified */
-}
-
-.subtitle-line2 {
-  /* No additional styles needed unless specified */
-}
-
 .buttons-row {
   display: flex;
-  gap: 16px; /* Space between the two buttons */
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .google-button2,
@@ -103,18 +96,457 @@
 
 .hero-image {
   width: 100%;
-  height: 200vh;     /* increase to 90vh or even 100vh if you want */
+  height: 200vh;
   object-fit: cover;
   display: block;
 }
 
-.frame{
-    margin-top: -200px;
+.frame {
+  width: 100%;
+  height: auto;
+  margin-top: -200px;
+  display: block;
 }
 
+.image-wrapper {
+  width: 100%;
+  position: relative;
+}
 
 .gradient-div {
   width: 100%;
-  height: 200px; /* Arbitrary height for the gradient; adjust as needed */
+  height: 200px;
   background: linear-gradient(178.12deg, rgba(255, 255, 255, 0) -0.85%, #FFFFFF 58.54%);
+}
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-container {
+    max-width: 700px;
+    padding: 35px 18px;
+  }
+
+  .big-title {
+    font-size: 48px;
+  }
+
+  .subtitle1 {
+    font-size: 18px;
+  }
+
+  .image-wrapper {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    height: 150vh;
+    object-fit: cover;
+  }
+
+  .frame {
+    width: 100%;
+    margin-top: -150px;
+  }
+}
+
+/* Small Tablets (600px - 768px) */
+@media (max-width: 768px) {
+  .hero-container {
+    max-width: 600px;
+    padding: 30px 16px;
+  }
+
+  .big-title {
+    font-size: 42px;
+  }
+
+  .subtitle1 {
+    font-size: 17px;
+  }
+
+  .buttons-row {
+    gap: 14px;
+  }
+
+  .google-button2,
+  .apple-button2 {
+    width: 240px;
+    height: 56px;
+    font-size: 14px;
+  }
+
+  .image-wrapper {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    height: 120vh;
+    object-fit: cover;
+  }
+
+  .frame {
+    width: 100%;
+    margin-top: -120px;
+  }
+}
+
+/* Mobile Large (480px - 600px) */
+@media (max-width: 600px) {
+  .hero-container {
+    max-width: 100%;
+    padding: 28px 15px;
+  }
+
+  .header-row {
+    padding: 7px 10px;
+    margin-bottom: 18px;
+  }
+
+  .small-square {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+  }
+
+  .small-text {
+    font-size: 13px;
+  }
+
+  .big-title {
+    font-size: 36px;
+    margin: 0 0 14px 0;
+  }
+
+  .subtitle1 {
+    font-size: 16px;
+    margin: 0 0 28px 0;
+    max-width: 100%;
+  }
+
+  .buttons-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 35px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .google-button2,
+  .apple-button2 {
+    width: auto;
+    min-width: 220px;
+    max-width: 90%;
+    height: 54px;
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .frame {
+    width: 100%;
+    height: auto;
+    margin-top: -100px;
+    object-fit: contain;
+  }
+}
+
+/* Mobile Medium (360px - 480px) */
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 24px 12px;
+  }
+
+  .header-row {
+    padding: 6px 9px;
+    margin-bottom: 16px;
+  }
+
+  .small-square {
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+  }
+
+  .small-text {
+    font-size: 12px;
+  }
+
+  .big-title {
+    font-size: 30px;
+    margin: 0 0 12px 0;
+  }
+
+  .subtitle1 {
+    font-size: 15px;
+    margin: 0 0 24px 0;
+  }
+
+  .buttons-row {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .google-button2,
+  .apple-button2 {
+    height: 52px;
+    font-size: 13px;
+    padding: 12px 18px;
+    gap: 8px;
+    min-width: 200px;
+    max-width: 90%;
+  }
+
+  .button-icon2 {
+    width: 22px;
+    height: 22px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    height: 90vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .frame {
+    width: 100%;
+    height: auto;
+    margin-top: -90px;
+    object-fit: contain;
+  }
+}
+
+/* Mobile Small (280px - 360px) */
+@media (max-width: 360px) {
+  .hero-container {
+    padding: 20px 10px;
+  }
+
+  .header-row {
+    padding: 5px 8px;
+    margin-bottom: 14px;
+  }
+
+  .small-square {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+  }
+
+  .small-text {
+    font-size: 11px;
+  }
+
+  .big-title {
+    font-size: 26px;
+    margin: 0 0 10px 0;
+  }
+
+  .subtitle1 {
+    font-size: 14px;
+    margin: 0 0 22px 0;
+  }
+
+  .buttons-row {
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .google-button2,
+  .apple-button2 {
+    height: 50px;
+    font-size: 12px;
+    padding: 10px 16px;
+    gap: 7px;
+    min-width: 180px;
+    max-width: 90%;
+  }
+
+  .button-icon2 {
+    width: 20px;
+    height: 20px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .frame {
+    width: 100%;
+    height: auto;
+    margin-top: -80px;
+    object-fit: contain;
+    max-height: 200px;
+  }
+}
+
+/* Mobile Extra Small (200px - 280px) */
+@media (max-width: 280px) {
+  .hero-container {
+    padding: 18px 8px;
+  }
+
+  .header-row {
+    padding: 4px 6px;
+    margin-bottom: 12px;
+  }
+
+  .small-square {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+  }
+
+  .small-text {
+    font-size: 10px;
+  }
+
+  .big-title {
+    font-size: 22px;
+    margin: 0 0 8px 0;
+  }
+
+  .subtitle1 {
+    font-size: 12px;
+    margin: 0 0 18px 0;
+  }
+
+  .buttons-row {
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+
+  .google-button2,
+  .apple-button2 {
+    height: 48px;
+    font-size: 11px;
+    padding: 8px 12px;
+    gap: 6px;
+    min-width: 160px;
+    max-width: 90%;
+  }
+
+  .button-icon2 {
+    width: 18px;
+    height: 18px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    height: 70vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .frame {
+    width: 100%;
+    height: auto;
+    margin-top: -70px;
+    object-fit: contain;
+    max-height: 150px;
+  }
+}
+
+/* Mobile Ultra Small (200px and below) */
+@media (max-width: 200px) {
+  .hero-container {
+    padding: 15px 6px;
+  }
+
+  .header-row {
+    padding: 3px 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .small-square {
+    width: 6px;
+    height: 6px;
+    margin-right: 3px;
+  }
+
+  .small-text {
+    font-size: 9px;
+  }
+
+  .big-title {
+    font-size: 18px;
+    margin: 0 0 6px 0;
+    line-height: 1.2;
+  }
+
+  .subtitle1 {
+    font-size: 11px;
+    margin: 0 0 16px 0;
+  }
+
+  .buttons-row {
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .google-button2,
+  .apple-button2 {
+    height: 44px;
+    font-size: 10px;
+    padding: 6px 10px;
+    gap: 5px;
+    min-width: 140px;
+    max-width: 90%;
+  }
+
+  .button-icon2 {
+    width: 16px;
+    height: 16px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .frame {
+    width: 100%;
+    height: auto;
+    margin-top: -60px;
+    object-fit: contain;
+    max-height: 120px;
+  }
 }
