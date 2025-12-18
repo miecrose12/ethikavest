@@ -11,9 +11,9 @@ function Hero() {
     <div id="home" className="hero-container">
       <div className="header-row">
         <div className="small-square"></div>
-        <p className="small-text">First Halal Investment Product in Nigeria</p>
+        <p className="small-text">Ai Powered Halal investment platform in Nigeria</p>
       </div>
-      <h1 className="big-title">Earn returns without compromising your values</h1>
+      <h1 className="big-title">Earn Returns Without Compromising Your Values</h1>
       <div className="subtitle1">
         <p className="subtitle-line11">Secure, transparent and value-driven</p>
         <p className="subtitle-line22">investments made for your financial growth.</p>

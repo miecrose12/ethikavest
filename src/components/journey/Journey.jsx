@@ -10,15 +10,15 @@ const HeroSection = () => {
     },
     {
       title: "Fund Wallet",
-      desc: "Add funds seamlessly with multiple payment options and start building your portfolio."
+      desc: "Effortlessly fund your wallet in seconds"
     },
     {
-      title: "Choose Investment",
-      desc: "Browse verified opportunities and select investments that match your goals."
+      title: "Explore Investments",
+      desc: "Search investment opportunities"
     },
     {
-      title: "Track Growth",
-      desc: "Monitor your returns in real-time and watch your wealth grow effortlessly."
+      title: "Trusted Opportunities",
+      desc: "Build your wealth Ethically"
     }
   ];
 
