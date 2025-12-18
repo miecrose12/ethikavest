@@ -29,13 +29,13 @@ const HeroSection = () => {
    <section id="journeya" className="hero-container">
       <h1 className="main-title">
         Start your journey—<br />
-        <span className="highlight-green">simple</span> and <span className="highlight-green">smooth.</span>
+        
       </h1>
      
-      <h2 className="subtitle">How it works</h2>
+      <h2 className="subtitle">Simple and smooth</h2>
      
       <p className="tagline">
-        Starting is simple. Growing is natural. It doesn't take a minute to<br />
+        Starting is simple. Growing is natural.<br/> It doesn't take a minute to<br />
         start growing wealth with us.
       </p>
 

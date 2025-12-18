@@ -21,10 +21,10 @@ const Trusted = () => {
         {/* Right Side - Text Content */}
         <div className="trusted-content">
           <h2 className="trusted-title">
-            Trusted and fully verified investments
+            Trusted and fully <br/> verified investments
           </h2>
           <p className="trusted-description">
-            Every opportunity on Ethikavest is thoroughly vetted to meet strict
+            Every opportunity on Ethikavest is thoroughly vetted <br/> to meet strict
             ethical and performance standards. We offer Shariah-compliant,
             high-impact investments.
           </p>

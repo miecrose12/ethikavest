@@ -25,8 +25,8 @@ const Back = () => {
           industry-trusted partners
         </h1>
         <p className="back-paragraph">
-          We work with carefully selected partners who uphold our standards of
-          excellence and ethical integrity, ensuring your investments are placed
+          We work with carefully selected partners who uphold <br/> our standards of
+          excellence and ethical integrity, <br/> ensuring your investments are placed
           with creditworthy.
         </p>
       </div>

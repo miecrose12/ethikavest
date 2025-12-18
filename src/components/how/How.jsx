@@ -34,7 +34,7 @@ const How = () => {
         .how-wrapper {
           font-family: 'Plus Jakarta Sans', sans-serif;
           padding: 100px 20px;
-          max-width: 1440px;
+          max-width: 1240px;
           margin: 0 auto;
         }
         .how-header {

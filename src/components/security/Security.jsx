@@ -14,9 +14,9 @@ const Security = () => {
             Top-tier security built for trust
           </h1>
           <p className="security-description">
-            At Ethikavest, your peace of mind comes first. We use advanced
-            encryption and strong security measures to ensure your personal
-            and financial data remains protected at every stage of your
+            At Ethikavest, your peace of mind comes first. We use <br/> advanced
+            encryption and strong security measures <br/> to ensure your personal
+            and financial data remains <br/> protected at every stage of your
             investment journey.
           </p>
         </div>

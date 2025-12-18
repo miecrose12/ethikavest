@@ -30,7 +30,7 @@ function Hero() {
       </div>
       <div className="image-wrapper">
         <img src={Heros} alt="Hero Image" className="hero-image" />
-        {/* <img src={Frame} alt="" className="frame" /> */}
+        <img src={Frame} alt="" className="frame" /> 
       </div>
     </div>
   );

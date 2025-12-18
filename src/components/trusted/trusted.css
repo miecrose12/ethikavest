@@ -35,9 +35,8 @@
 
 /* Right Text Content */
 .trusted-content {
-  flex: 1;
-  min-width: 300px;
-  max-width: 566px;
+  
+  max-width: 666px;
 }
 
 .trusted-title {
@@ -48,7 +47,7 @@
   letter-spacing: -1px;
   color: #0F172A;
   margin: 0 0 32px 0;
-  max-width: 100%;
+  max-width: 1200px;
 }
 
 .trusted-description {

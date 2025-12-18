@@ -3,7 +3,7 @@
 .back-section {
   position: relative;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1150px;
   height: 600px;
   margin: 0 auto;
   padding: 80px 40px;
@@ -59,11 +59,11 @@
 .back-paragraph {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 146%;
   letter-spacing: -0.05px;
   color: #333333;
-  max-width: 600px;
+  max-width: 1200px;
 }
 
 /* ==================== DESKTOP LARGE (1200px - 1400px) ==================== */
