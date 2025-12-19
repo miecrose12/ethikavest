@@ -14,6 +14,7 @@ import Reserve from './components/reserve/Reserve';
 import Footer from './components/footer/Footer';
 import Waitlistview from './components/waitlist/Waitlistview';
 
+
 // Import the protected waitlist view
   // Your file with PasscodeScreen inside
 
