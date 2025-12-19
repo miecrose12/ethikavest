@@ -1,7 +1,7 @@
 // src/components/waitlist/WaitlistView.jsx
 import React, { useState, useEffect } from "react";
 
-const Waitlistview = () => {
+const WaitlistView = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passcodeInput, setPasscodeInput] = useState("");
   const [passcodeError, setPasscodeError] = useState("");
@@ -13,7 +13,7 @@ const Waitlistview = () => {
   const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  const CORRECT_PASSCODE = "ethika2025"; // Change this!
+  const CORRECT_PASSCODE = "ethika2025"; // Change this to a strong passcode!
 
   const API_ENDPOINT = "https://halalbackend-production-76e9.up.railway.app/api/waitlist";
 
@@ -95,7 +95,7 @@ const Waitlistview = () => {
     URL.revokeObjectURL(url);
   };
 
-  // === ELEGANT PASSCODE SCREEN - FULLY RETAINED ===
+  // Elegant Passcode Screen
   if (!isAuthenticated) {
     return (
       <div style={{
@@ -175,7 +175,6 @@ const Waitlistview = () => {
                 fontSize: "18px",
                 fontWeight: "600",
                 cursor: "pointer",
-                transition: "background-color 0.2s"
               }}
             >
               Access Dashboard
@@ -194,7 +193,7 @@ const Waitlistview = () => {
     );
   }
 
-  // === FULLY RESPONSIVE DASHBOARD ===
+  // Responsive Dashboard
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#f7fafc", padding: "30px 15px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -208,7 +207,6 @@ const Waitlistview = () => {
           </p>
         </header>
 
-        {/* Controls - Responsive Stack on Mobile */}
         <div style={{ marginBottom: "30px" }}>
           <input
             type="text"
@@ -226,54 +224,36 @@ const Waitlistview = () => {
             }}
           />
           <div style={{ display: "flex", gap: "12px" }}>
-            <button
-              onClick={fetchWaitlist}
-              disabled={loading}
-              style={{
-                flex: 1,
-                padding: "14px",
-                backgroundColor: "#26975C",
-                color: "white",
-                border: "none",
-                borderRadius: "12px",
-                fontSize: "16px",
-                fontWeight: "600",
-                cursor: "pointer"
-              }}
-            >
+            <button onClick={fetchWaitlist} disabled={loading} style={{
+              flex: 1,
+              padding: "14px",
+              backgroundColor: "#26975C",
+              color: "white",
+              border: "none",
+              borderRadius: "12px",
+              fontSize: "16px",
+              fontWeight: "600"
+            }}>
               {loading ? "Loading..." : "Refresh"}
             </button>
-            <button
-              onClick={exportToCSV}
-              disabled={filteredList.length === 0}
-              style={{
-                flex: 1,
-                padding: "14px",
-                backgroundColor: "#4a5568",
-                color: "white",
-                border: "none",
-                borderRadius: "12px",
-                fontSize: "16px",
-                fontWeight: "600",
-                opacity: filteredList.length === 0 ? 0.6 : 1
-              }}
-            >
+            <button onClick={exportToCSV} disabled={filteredList.length === 0} style={{
+              flex: 1,
+              padding: "14px",
+              backgroundColor: "#4a5568",
+              color: "white",
+              border: "none",
+              borderRadius: "12px",
+              fontSize: "16px",
+              fontWeight: "600"
+            }}>
               Export CSV
             </button>
           </div>
         </div>
 
-        {error && (
-          <div style={{ background: "#fee", color: "#c53030", padding: "16px", borderRadius: "12px", marginBottom: "24px", textAlign: "center" }}>
-            {error}
-          </div>
-        )}
+        {error && <div style={{ background: "#fee", color: "#c53030", padding: "16px", borderRadius: "12px", marginBottom: "24px", textAlign: "center" }}>{error}</div>}
 
-        {loading && (
-          <div style={{ textAlign: "center", padding: "60px", color: "#666" }}>
-            Loading waitlist...
-          </div>
-        )}
+        {loading && <div style={{ textAlign: "center", padding: "60px", color: "#666" }}>Loading waitlist...</div>}
 
         {!loading && filteredList.length === 0 && (
           <div style={{ textAlign: "center", padding: "80px", color: "#666" }}>
@@ -284,15 +264,9 @@ const Waitlistview = () => {
 
         {!loading && filteredList.length > 0 && (
           <>
-            {/* Desktop & Tablet: Scrollable Table */}
+            {/* Desktop/Tablet Table */}
             <div className="desktop-view">
-              <div style={{
-                background: "white",
-                borderRadius: "12px",
-                overflow: "hidden",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-                overflowX: "auto"
-              }}>
+              <div style={{ background: "white", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.08)", overflowX: "auto" }}>
                 <table style={{ width: "100%", minWidth: "700px", borderCollapse: "collapse" }}>
                   <thead style={{ backgroundColor: "#f0faf5" }}>
                     <tr>
@@ -312,11 +286,7 @@ const Waitlistview = () => {
                         <td style={{ padding: "16px" }}>{person.email || "-"}</td>
                         <td style={{ padding: "16px" }}>
                           {person.created_at
-                            ? new Date(person.created_at).toLocaleDateString("en-GB", {
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                              })
+                            ? new Date(person.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
                             : "-"}
                         </td>
                       </tr>
@@ -326,50 +296,27 @@ const Waitlistview = () => {
               </div>
             </div>
 
-            {/* Mobile: Beautiful Cards */}
+            {/* Mobile Cards */}
             <div className="mobile-view">
               {filteredList.map((person, index) => (
-                <div
-                  key={person.uuid || index}
-                  style={{
-                    background: "white",
-                    borderRadius: "16px",
-                    padding: "24px",
-                    marginBottom: "20px",
-                    boxShadow: "0 6px 20px rgba(0,0,0,0.08)"
-                  }}
-                >
-                  <div style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "16px"
-                  }}>
-                    <span style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      color: "#26975C"
-                    }}>
-                      #{index + 1}
-                    </span>
-                    <div style={{ textAlign: "right" }}>
-                      <div style={{ fontSize: "18px", fontWeight: "bold", color: "#26975C" }}>
-                        {person.firstname} {person.lastname}
-                      </div>
+                <div key={person.uuid || index} style={{
+                  background: "white",
+                  borderRadius: "16px",
+                  padding: "24px",
+                  marginBottom: "20px",
+                  boxShadow: "0 6px 20px rgba(0,0,0,0.08)"
+                }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+                    <span style={{ fontSize: "20px", fontWeight: "bold", color: "#26975C" }}>#{index + 1}</span>
+                    <div style={{ textAlign: "right", fontSize: "18px", fontWeight: "bold", color: "#26975C" }}>
+                      {person.firstname} {person.lastname}
                     </div>
                   </div>
                   <div style={{ color: "#444", fontSize: "16px" }}>
-                    <p style={{ margin: "12px 0" }}>
-                      <strong>Email:</strong> {person.email || "-"}
-                    </p>
-                    <p style={{ margin: "12px 0" }}>
-                      <strong>Joined:</strong> 
+                    <p style={{ margin: "12px 0" }}><strong>Email:</strong> {person.email || "-"}</p>
+                    <p style={{ margin: "12px 0" }}><strong>Joined:</strong> 
                       {person.created_at
-                        ? new Date(person.created_at).toLocaleDateString("en-GB", {
-                            day: "numeric",
-                            month: "short",
-                            year: "numeric",
-                          })
+                        ? new Date(person.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
                         : "-"}
                     </p>
                   </div>
@@ -403,27 +350,18 @@ const Waitlistview = () => {
         </div>
       </div>
 
-      {/* Responsive Styles */}
       <style jsx>{`
         @media (max-width: 768px) {
-          .desktop-view {
-            display: none;
-          }
-          .mobile-view {
-            display: block;
-          }
+          .desktop-view { display: none; }
+          .mobile-view { display: block; }
         }
         @media (min-width: 769px) {
-          .desktop-view {
-            display: block;
-          }
-          .mobile-view {
-            display: none;
-          }
+          .desktop-view { display: block; }
+          .mobile-view { display: none; }
         }
       `}</style>
     </div>
   );
 };
 
-export default Waitlistview;
+export default WaitlistView; // Correct export name
