@@ -1,10 +1,10 @@
-import React, { useState } from "react"; // <-- This fixes the useState error!
-import "./reserve.css"; // Your external CSS
+import React, { useState } from "react";
+import "./reserve.css";
 
 const WaitlistContactSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Contact form states
+  // Contact form states (unchanged)
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -14,29 +14,102 @@ const WaitlistContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ success: false, error: "" });
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  // New: Waitlist modal form states
+  const [waitlistData, setWaitlistData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+  });
+  const [isWaitlistSubmitting, setIsWaitlistSubmitting] = useState(false);
+  const [waitlistMessage, setWaitlistMessage] = useState("");
+  const [waitlistSuccess, setWaitlistSuccess] = useState(null); // true/false/null
 
-  // Waitlist modal submission (unchanged, no API yet)
-  const handleSubmitWaitlist = (e) => {
-    e.preventDefault();
-    alert("Thank you for joining the waitlist!"); // Placeholder
-    closeModal();
+  const openModal = () => {
+    setIsModalOpen(true);
+    // Reset waitlist form every time modal opens
+    setWaitlistData({ firstname: "", lastname: "", email: "" });
+    setWaitlistMessage("");
+    setWaitlistSuccess(null);
+    setIsWaitlistSubmitting(false);
   };
 
-  // Handle contact form input changes
+  const closeModal = () => setIsModalOpen(false);
+
+  // Handle waitlist input changes
+  const handleWaitlistChange = (e) => {
+    const { name, value } = e.target;
+    setWaitlistData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Updated: Real API submission for waitlist
+  const handleSubmitWaitlist = async (e) => {
+    e.preventDefault();
+    setIsWaitlistSubmitting(true);
+    setWaitlistMessage("");
+    setWaitlistSuccess(null);
+
+    // Basic client-side validation
+    if (!waitlistData.firstname || !waitlistData.lastname || !waitlistData.email) {
+      setWaitlistMessage("Please fill in all fields.");
+      setWaitlistSuccess(false);
+      setIsWaitlistSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://halalbackend-production-76e9.up.railway.app/api/joinlist",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstname: waitlistData.firstname.trim(),
+            lastname: waitlistData.lastname.trim(),
+            email: waitlistData.email.trim(),
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setWaitlistSuccess(true);
+        setWaitlistMessage(
+          result.message || "You have successfully joined the waiting list!"
+        );
+
+        // Auto-close modal after 3 seconds
+        setTimeout(() => {
+          closeModal();
+        }, 3000);
+      } else {
+        setWaitlistSuccess(false);
+        setWaitlistMessage(
+          result.message || "Something went wrong. Please try again."
+        );
+      }
+    } catch (error) {
+      console.error("Waitlist submission error:", error);
+      setWaitlistSuccess(false);
+      setWaitlistMessage("Network error. Please check your connection.");
+    } finally {
+      setIsWaitlistSubmitting(false);
+    }
+  };
+
+  // Contact form handlers (unchanged except minor cleanup)
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle contact form submission to backend
   const handleContactSubmit = async (e) => {
     e.preventDefault();
     setSubmitStatus({ success: false, error: "" });
     setIsSubmitting(true);
 
-    // Basic validation
     if (!formData.fullname || !formData.email || !formData.message) {
       setSubmitStatus({
         success: false,
@@ -57,7 +130,7 @@ const WaitlistContactSection = () => {
           body: JSON.stringify({
             fullname: formData.fullname,
             email: formData.email,
-            phone: formData.phone.trim() || "", // Optional
+            phone: formData.phone.trim() || "",
             message: formData.message,
           }),
         }
@@ -68,12 +141,9 @@ const WaitlistContactSection = () => {
         throw new Error(errorData.message || "Failed to send message.");
       }
 
-      // Success
       setSubmitStatus({ success: true, error: "" });
-      setFormData({ fullname: "", email: "", phone: "", message: "" }); // Reset
-      alert("Message sent successfully!");
+      setFormData({ fullname: "", email: "", phone: "", message: "" });
     } catch (err) {
-      console.error("Contact submission error:", err);
       setSubmitStatus({
         success: false,
         error: err.message || "An error occurred. Please try again.",
@@ -85,7 +155,7 @@ const WaitlistContactSection = () => {
 
   return (
     <>
-      {/* Waitlist Section - unchanged */}
+      {/* Waitlist Section */}
       <section className="waitlist-section">
         <div className="waitlist-content">
           <h1 className="waitlist-headline">
@@ -100,7 +170,7 @@ const WaitlistContactSection = () => {
         </div>
       </section>
 
-      {/* Contact Form Section - Fully Integrated */}
+      {/* Contact Form Section (unchanged structure) */}
       <section id="reserve" className="contact-section">
         <div className="contact-container">
           <div className="contact-info">
@@ -113,6 +183,7 @@ const WaitlistContactSection = () => {
 
           <div className="contact-form-wrapper">
             <form className="contact-form" onSubmit={handleContactSubmit}>
+              {/* Form fields remain the same */}
               <div className="form-group form-group-name">
                 <input
                   type="text"
@@ -190,11 +261,8 @@ const WaitlistContactSection = () => {
                   </p>
                 </div>
 
-                {/* Feedback Messages */}
                 {submitStatus.error && (
-                  <p style={{ color: "red", margin: "10px 0" }}>
-                    {submitStatus.error}
-                  </p>
+                  <p style={{ color: "red", margin: "10px 0" }}>{submitStatus.error}</p>
                 )}
                 {submitStatus.success && (
                   <p style={{ color: "green", margin: "10px 0" }}>
@@ -215,7 +283,7 @@ const WaitlistContactSection = () => {
         </div>
       </section>
 
-      {/* Waitlist Modal - unchanged */}
+      {/* Updated Waitlist Modal with API integration */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -229,39 +297,76 @@ const WaitlistContactSection = () => {
 
             <h2 className="modal-title">Join the Waitlist</h2>
 
-            <form onSubmit={handleSubmitWaitlist}>
-              <div>
-                <div className="modal-name-label">Name*</div>
-                <div className="modal-name-row">
+            {/* Success/Error Message */}
+            {waitlistMessage && (
+              <div
+                className="modal-message"
+                style={{
+                  padding: "12px",
+                  margin: "16px 0",
+                  borderRadius: "8px",
+                  textAlign: "center",
+                  backgroundColor: waitlistSuccess ? "#d4edda" : "#f8d7da",
+                  color: waitlistSuccess ? "#155724" : "#721c24",
+                  border: `1px solid ${waitlistSuccess ? "#c3e6cb" : "#f5c6cb"}`,
+                }}
+              >
+                {waitlistMessage}
+              </div>
+            )}
+
+            {/* Show form only if not successfully submitted */}
+            {!waitlistSuccess && (
+              <form onSubmit={handleSubmitWaitlist}>
+                <div>
+                  <div className="modal-name-label">Name*</div>
+                  <div className="modal-name-row">
+                    <input
+                      type="text"
+                      name="firstname"
+                      placeholder="First name"
+                      className="modal-name-input"
+                      value={waitlistData.firstname}
+                      onChange={handleWaitlistChange}
+                      required
+                      disabled={isWaitlistSubmitting}
+                    />
+                    <input
+                      type="text"
+                      name="lastname"
+                      placeholder="Last name"
+                      className="modal-name-input"
+                      value={waitlistData.lastname}
+                      onChange={handleWaitlistChange}
+                      required
+                      disabled={isWaitlistSubmitting}
+                    />
+                  </div>
+                </div>
+
+                <div className="modal-email-wrapper">
+                  <div className="modal-email-label">Email*</div>
                   <input
-                    type="text"
-                    placeholder="First name"
-                    className="modal-name-input"
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    className="modal-email-input"
+                    value={waitlistData.email}
+                    onChange={handleWaitlistChange}
                     required
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last name"
-                    className="modal-name-input"
-                    required
+                    disabled={isWaitlistSubmitting}
                   />
                 </div>
-              </div>
 
-              <div className="modal-email-wrapper">
-                <div className="modal-email-label">Email*</div>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="modal-email-input"
-                  required
-                />
-              </div>
-
-              <button type="submit" className="modal-join-btn">
-                Join Now
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="modal-join-btn"
+                  disabled={isWaitlistSubmitting}
+                >
+                  {isWaitlistSubmitting ? "Joining..." : "Join Now"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       )}

@@ -24,7 +24,7 @@ const Trusted = () => {
             Trusted and fully <br/> verified investments
           </h2>
           <p className="trusted-description">
-            Every opportunity on Ethikavest is thoroughly vetted <br/> to meet strict
+            Every opportunity on Ethikavest is thoroughly vetted  to meet strict
             ethical and performance standards. We offer Shariah-compliant,
             high-impact investments.
           </p>

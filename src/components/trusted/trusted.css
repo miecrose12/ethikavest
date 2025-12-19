@@ -191,8 +191,10 @@
   }
   
   .trusted-description {
-    font-size: 17px;
-    line-height: 155%;
+    font-size: 16px;
+    line-height: 165%;
+    text-align: middle;        /* better readability on small screens */
+    max-width: 100%;
   }
 }
 
@@ -226,7 +228,7 @@
   }
   
   .trusted-description {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 160%;
     letter-spacing: 0;
   }
