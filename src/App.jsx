@@ -12,9 +12,10 @@ import Trusted from './components/trusted/Trusted';
 import Back from './components/backed/Back';
 import Reserve from './components/reserve/Reserve';
 import Footer from './components/footer/Footer';
+import WaitlistView from './components/waitlist/Waitlistview';
 
 // Import the protected waitlist view
-import WaitlistView from './components/Waitlist/WaitlistView';  // Your file with PasscodeScreen inside
+  // Your file with PasscodeScreen inside
 
 const App = () => {
   return (
