@@ -1,7 +1,7 @@
 // src/components/waitlist/WaitlistView.jsx
 import React, { useState, useEffect } from "react";
 
-const WaitlistView = () => {
+const Waitlistview = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passcodeInput, setPasscodeInput] = useState("");
   const [passcodeError, setPasscodeError] = useState("");
@@ -426,4 +426,4 @@ const WaitlistView = () => {
   );
 };
 
-export default WaitlistView;
+export default Waitlistview;
