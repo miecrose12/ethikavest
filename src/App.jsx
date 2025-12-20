@@ -12,11 +12,8 @@ import Trusted from './components/trusted/Trusted';
 import Back from './components/backed/Back';
 import Reserve from './components/reserve/Reserve';
 import Footer from './components/footer/Footer';
-import Waitlistview from './components/waitlist/Waitlistview';
+import WaitlistView from './components/waitlist/Wait';
 
-
-// Import the protected waitlist view
-  // Your file with PasscodeScreen inside
 
 const App = () => {
   return (
@@ -38,13 +35,12 @@ const App = () => {
               <Back />
               <Reserve />
               <Footer />
-              
             </>
           }
         />
 
         {/* Protected Admin Waitlist View - Hidden URL */}
-        <Route path="/waitlist" element={<Waitlistview />} />
+        <Route path="/waitlist" element={<WaitlistView />} />
       </Routes>
     </Router>
   );
