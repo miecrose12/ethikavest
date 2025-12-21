@@ -1,63 +1,92 @@
-/* Footer.css */
-.footer {
+/* Footer.css - Ethikavest Footer with f- prefixed classes */
+
+/* Global font import */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+/* Main Footer Container */
+.f-footer {
   max-width: 1440px;
   margin: 0 auto;
-  background-color: #fff; /* Assuming white background; change if needed */
+  background-color: #fff;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  padding-top: 60px; /* Approximate spacing to match relative positions */
+  padding-top: 60px;
   padding-bottom: 60px;
   position: relative;
 }
 
-.footer-main {
+/* Top and Bottom Horizontal Lines */
+.f-footer-top-line,
+.f-footer-bottom-line {
+  width: 1178px;
+  height: 1px;
+  background-color: #3535354d;
+  border: none;
+  margin: 0 auto;
+}
+
+.f-footer-top-line {
+  margin-bottom: 40px;
+}
+
+.f-footer-bottom-line {
+  margin-top: 60px;
+}
+
+/* Main Content Wrapper */
+.f-footer-main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   max-width: 1178px;
   margin: 0 auto;
-  padding: 0 20px; /* Small padding for responsiveness, but content max 1178px */
-  gap: 40px; /* Overall gap between left and right */
+  padding: 0 20px;
+  gap: 40px;
   position: relative;
 }
 
-.footer-left {
+/* Left Section (Social, Compliance, Download Buttons) */
+.f-footer-left {
   display: flex;
   flex-direction: column;
-  gap: 32px; /* Spacing between social, text, buttons */
+  gap: 32px;
   flex: 1;
-  max-width: 550px; /* To fit the widest element, the text and buttons */
+  max-width: 550px;
 }
 
-.social-icons {
+/* Social Icons */
+.f-social-icons {
   display: flex;
   gap: 8px;
-  justify-content: flex-start; /* Align left within left section */
+  justify-content: flex-start;
 }
 
-.social-icons img {
+.f-social-icons img {
   width: 28px;
   height: 28px;
   object-fit: contain;
 }
 
-.compliance-text {
+/* Compliance Text */
+.f-compliance-text {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.05px;
   font-weight: 600;
-  color: #333; /* Adjust color as needed */
+  color: #333;
   max-width: 500px;
   text-align: left;
 }
 
-.download-buttons {
+/* Download Buttons Container */
+.f-download-buttons {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Space between buttons */
-  align-items: flex-start; /* Align buttons to left */
+  gap: 16px;
+  align-items: flex-start;
 }
 
-.download-btn {
+/* Download Button Styles */
+.f-download-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,57 +103,59 @@
   letter-spacing: -0.01em;
 }
 
-.google-play {
-  background-color: #2AA866;
+.f-google-play {
+  background-color: #2aa866;
 }
 
-.apple-store {
+.f-apple-store {
   background-color: #262157;
   width: 276px;
 }
 
-.btn-icon {
+.f-btn-icon {
   height: 32px;
   width: auto;
 }
 
-.download-btn span {
+.f-download-btn span {
   vertical-align: middle;
 }
 
-.vertical-divider {
+/* Vertical Divider */
+.f-vertical-divider {
   width: 1px;
   height: 253px;
-  background-color: #3535354D;
+  background-color: #3535354d;
   flex-shrink: 0;
 }
 
-.footer-right {
+/* Right Section (Columns) */
+.f-footer-right {
   display: flex;
-  gap: 60px; /* Adjusted spacing between columns for better alignment */
-  justify-content: flex-end; /* Align columns to the right */
+  gap: 60px;
+  justify-content: flex-end;
   flex: 1;
 }
 
-.footer-column {
+.f-footer-column {
   display: flex;
   flex-direction: column;
 }
 
-.footer-column h4 {
+.f-footer-column h4 {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 16px;
   color: #333;
 }
 
-.footer-column ul {
+.f-footer-column ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-column li {
+.f-footer-column li {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -132,70 +163,457 @@
   color: #333;
 }
 
-.footer-top-line,
-.footer-bottom-line {
-  width: 1178px;
-  height: 1px;
-  background-color: #3535354D;
-  border: none;
-  margin: 0 auto;
-}
+/* ==========================================
+   RESPONSIVE BREAKPOINTS
+========================================== */
 
-.footer-top-line {
-  margin-bottom: 40px; /* Space after top line to content */
-}
-
-.footer-bottom-line {
-  margin-top: 60px; /* Space from content to bottom line */
-}
-
-/* Media query for responsiveness, to ensure centering on smaller screens */
+/* Large Desktop */
 @media (max-width: 1440px) {
-  .footer {
+  .f-footer {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  .f-footer-top-line,
+  .f-footer-bottom-line {
+    width: 100%;
+    max-width: 1178px;
+  }
 }
 
-@media (max-width: 1200px) {
-  .footer-main {
+@media (max-width: 1280px) {
+  .f-footer-main {
+    max-width: 1100px;
+    gap: 35px;
+  }
+
+  .f-footer-left {
+    max-width: 520px;
+  }
+
+  .f-footer-right {
+    gap: 50px;
+  }
+}
+
+/* Desktop & Laptop */
+@media (max-width: 1024px) {
+  .f-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .f-footer-main {
+    max-width: 900px;
+    gap: 30px;
+  }
+
+  .f-footer-left {
+    max-width: 480px;
+    gap: 28px;
+  }
+
+  .f-footer-right {
+    gap: 40px;
+  }
+
+  .f-vertical-divider {
+    height: 240px;
+  }
+
+  .f-compliance-text {
+    font-size: 13px;
+    line-height: 22px;
+    max-width: 470px;
+  }
+
+  .f-download-btn {
+    width: 260px;
+    height: 54px;
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+
+  .f-apple-store {
+    width: 258px;
+  }
+
+  .f-footer-column h4 {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .f-footer-column li {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .f-footer-top-line {
+    margin-bottom: 35px;
+  }
+
+  .f-footer-bottom-line {
+    margin-top: 55px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .f-footer {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .f-footer-main {
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    padding: 0 30px;
   }
 
-  .footer-left,
-  .footer-right {
+  .f-footer-left {
     max-width: 100%;
     align-items: center;
     text-align: center;
+    gap: 26px;
   }
 
-  .social-icons {
+  .f-social-icons {
     justify-content: center;
   }
 
-  .download-buttons {
-    align-items: center;
-  }
-
-  .compliance-text {
+  .f-compliance-text {
     text-align: center;
     max-width: 100%;
+    font-size: 13px;
+    line-height: 22px;
   }
 
-  .vertical-divider {
-    display: none; /* Hide vertical on smaller screens */
+  .f-download-buttons {
+    align-items: center;
+    gap: 14px;
   }
 
-  .footer-right {
+  .f-download-btn {
+    width: 250px;
+    height: 52px;
+  }
+
+  .f-apple-store {
+    width: 248px;
+  }
+
+  .f-vertical-divider {
+    display: none;
+  }
+
+  .f-footer-right {
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 50px;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .f-footer-column {
+    text-align: center;
+  }
+
+  .f-footer-top-line {
+    margin-bottom: 32px;
+  }
+
+  .f-footer-bottom-line {
+    margin-top: 50px;
   }
 }
 
-/* Note: Adjusted flexbox for better centering and alignment. The max-width is 1178px for content, centered within up to 1440px container.
-   Social icons, text, and buttons aligned left in left section, columns spaced evenly in right.
-   Added responsiveness for better middle alignment on various screens.
-   Replace placeholder icons and badges with actual assets. Fine-tune gaps/paddings based on exact design specs. */
+/* Large Mobile (640px) */
+@media (max-width: 640px) {
+  .f-footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .f-footer-main {
+    gap: 35px;
+    padding: 0 24px;
+  }
+
+  .f-footer-left {
+    gap: 24px;
+  }
+
+  .f-social-icons {
+    gap: 12px;
+  }
+
+  .f-social-icons img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .f-compliance-text {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .f-download-buttons {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .f-download-btn {
+    width: 100%;
+    max-width: 280px;
+    height: 50px;
+    font-size: 13px;
+    padding: 12px 18px;
+  }
+
+  .f-apple-store {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .f-btn-icon {
+    height: 28px;
+  }
+
+  .f-footer-right {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .f-footer-column h4 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .f-footer-column li {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 8px;
+  }
+
+  .f-footer-top-line {
+    margin-bottom: 30px;
+  }
+
+  .f-footer-bottom-line {
+    margin-top: 45px;
+  }
+}
+
+/* Standard Mobile (480px) */
+@media (max-width: 480px) {
+  .f-footer {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .f-footer-main {
+    gap: 32px;
+    padding: 0 20px;
+  }
+
+  .f-footer-left {
+    gap: 22px;
+  }
+
+  .f-social-icons {
+    gap: 10px;
+  }
+
+  .f-social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .f-compliance-text {
+    font-size: 11px;
+    line-height: 19px;
+  }
+
+  .f-download-buttons {
+    gap: 10px;
+  }
+
+  .f-download-btn {
+    height: 48px;
+    font-size: 12px;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  .f-btn-icon {
+    height: 26px;
+  }
+
+  .f-footer-right {
+    gap: 28px;
+  }
+
+  .f-footer-column h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .f-footer-column li {
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 7px;
+  }
+
+  .f-footer-top-line {
+    margin-bottom: 28px;
+  }
+
+  .f-footer-bottom-line {
+    margin-top: 40px;
+  }
+}
+
+/* Small Mobile (400px) */
+@media (max-width: 400px) {
+  .f-footer {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .f-footer-main {
+    gap: 30px;
+    padding: 0 16px;
+  }
+
+  .f-footer-left {
+    gap: 20px;
+  }
+
+  .f-social-icons {
+    gap: 8px;
+  }
+
+  .f-social-icons img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .f-compliance-text {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .f-download-btn {
+    height: 46px;
+    font-size: 11px;
+    padding: 9px 14px;
+    gap: 7px;
+  }
+
+  .f-btn-icon {
+    height: 24px;
+  }
+
+  .f-footer-right {
+    gap: 26px;
+  }
+
+  .f-footer-column h4 {
+    font-size: 12px;
+    margin-bottom: 9px;
+  }
+
+  .f-footer-column li {
+    font-size: 12px;
+    line-height: 19px;
+    margin-bottom: 6px;
+  }
+
+  .f-footer-top-line {
+    margin-bottom: 26px;
+  }
+
+  .f-footer-bottom-line {
+    margin-top: 38px;
+  }
+}
+
+/* Extra Small Mobile (360px) */
+@media (max-width: 360px) {
+  .f-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .f-footer-main {
+    gap: 28px;
+    padding: 0 14px;
+  }
+
+  .f-footer-left {
+    gap: 18px;
+  }
+
+  .f-social-icons {
+    gap: 7px;
+  }
+
+  .f-social-icons img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .f-compliance-text {
+    font-size: 10px;
+    line-height: 17px;
+  }
+
+  .f-download-btn {
+    height: 44px;
+    font-size: 10px;
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .f-btn-icon {
+    height: 22px;
+  }
+
+  .f-footer-right {
+    gap: 24px;
+  }
+
+  .f-footer-column h4 {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .f-footer-column li {
+    font-size: 11px;
+    line-height: 18px;
+    margin-bottom: 6px;
+  }
+
+  .f-footer-top-line {
+    margin-bottom: 24px;
+  }
+
+  .f-footer-bottom-line {
+    margin-top: 36px;
+  }
+}
+
+/* Footer link text (replaces former <li> styling) */
+.f-footer-link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* Make sure <p> elements don't have default margins */
+.f-footer-column p {
+  margin: 0;
+}

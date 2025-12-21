@@ -13,6 +13,8 @@ import Back from './components/backed/Back';
 import Reserve from './components/reserve/Reserve';
 import Footer from './components/footer/Footer';
 import WaitlistView from './components/waitlist/Wait';
+import Terms from './components/terms and privacy/Terms';
+import Privacy from './components/terms and privacy/Privacy';
 
 
 const App = () => {
@@ -41,6 +43,8 @@ const App = () => {
 
         {/* Protected Admin Waitlist View - Hidden URL */}
         <Route path="/waitlist" element={<WaitlistView />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </Router>
   );

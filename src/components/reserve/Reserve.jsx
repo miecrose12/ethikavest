@@ -253,11 +253,11 @@ const WaitlistContactSection = () => {
                   </label>
                   <p className="terms-text">
                     I agree with the{" "}
-                    <a href="#" className="underline-link">
+                    <a href="/terms" className="underline-link">
                       Terms and Conditions
                     </a>{" "}
                     and{" "}
-                    <a href="#" className="underline-link">Privacy Policy</a>
+                    <a href="/privacy" className="underline-link">Privacy Policy</a>
                   </p>
                 </div>
 
