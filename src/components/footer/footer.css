@@ -611,6 +611,7 @@
   line-height: 24px;
   margin-bottom: 12px;
   color: #333;
+  text-decoration: none;
 }
 
 /* Make sure <p> elements don't have default margins */

@@ -43,8 +43,9 @@ const Footer = () => {
         <div className="f-footer-right">
           <div className="f-footer-column">
             <h4>Company</h4>
-            <p className="f-footer-link">Terms</p>
-            <p className="f-footer-link">Privacy</p>
+          <a href="/terms" className="f-footer-link">Terms</a>
+<a href="/privacy" className="f-footer-link">Privacy</a>
+
             <p className="f-footer-link">Contact Us</p>
             <p className="f-footer-link">Blog</p>
           </div>
