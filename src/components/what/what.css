@@ -37,7 +37,7 @@
   right: 0;
   bottom: 0;
   background: #051B0F12;
-  backdrop-filter: blur(8.1px);
+  backdrop-filter: blur(1.1px);
   -webkit-backdrop-filter: blur(13.1px);
   z-index: 1;
 }

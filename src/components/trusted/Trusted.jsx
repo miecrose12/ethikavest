@@ -3,7 +3,7 @@ import React from 'react';
 import './trusted.css';
 
 // Replace this with your actual image path
-import trustedImage from '../../assets/trusted.svg'; // <-- update this path
+import trustedImage from '../../assets/replace.png'; // <-- update this path
 
 const Trusted = () => {
   return (
